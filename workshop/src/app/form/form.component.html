@@ -1,1 +1,7 @@
-<p>form works!</p>
+<form [formGroup]="userForm" (ngSubmit)="submitForm()">
+  <label for="userCount">Number of Users</label>
+  <input id="userCount" type="number" formControlName="userCount" /><br />
+  <label for="groupSize">GroupSize</label>
+  <input type="number" for="groupSize" formControlName="groupSize" /> <br />
+  <button type="submit" [disabled]="userForm.invalid">Submit</button>
+</form>
