@@ -1,1 +1,31 @@
-<p>rounds works!</p>
+<div *ngIf="data">
+  <div *ngIf="data.rounds && data.rounds.length > 0">
+    <h3>Round {{ data.currentRound + 1 }}</h3>
+    <div class="grid-list">
+      <div
+        *ngFor="let workshop of data.rounds[data.currentRound].workshops"
+        class="workshop-card"
+      >
+        <p><strong>Workshop ID:</strong> {{ workshop.id }}</p>
+        <p><strong>Leader:</strong> {{ workshop.leader }}</p>
+        <p><strong>Participants:</strong></p>
+        <ul>
+          <li *ngFor="let participant of workshop.participants">
+            {{ participant.id }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="button-group">
+      <button (click)="previousRound()" [disabled]="data.currentRound <= 0">
+        Previous Round
+      </button>
+      <button
+        (click)="nextRound()"
+        [disabled]="data.currentRound >= data.rounds.length - 1"
+      >
+        Next Round
+      </button>
+    </div>
+  </div>
+</div>
