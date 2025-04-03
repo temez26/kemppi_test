@@ -24,3 +24,4 @@ A service that uses Observables to manage and share application data, making it 
 - The system dynamically calculates the number of workshops: it is determined by dividing the total number of participants by the group size (e.g., with 10 participants and a group size of 5, there are 2 workshops, hence 2 rounds).
 - While every participant is scheduled to visit each workshop exactly once, the current implementation results in identical group compositions across rounds.
 - one user is represented just as certain number
+- Time used about 3h
